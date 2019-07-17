@@ -8,7 +8,7 @@
 int main(void)
 {
    List list;
-   LData data;
+   LData data, sum=0;
    int i;
 
    ListInit(&list);
@@ -16,12 +16,21 @@ int main(void)
    for(i=0; i<9; i++)
      LInsert(&list, i+1);
 
+   /*
    if(LFirst(&list, &data))
    {
      printf("%d ", data);
      while(LNext(&list, &data))
        printf("%d ", data);
    }
+   */
+   if(LFirst(&list, &data))
+   {
+     sum += data;
+     while(LNext(&list, &data))
+       sum += data;
+   }
+   printf("total sum: %d", sum);
    printf("\n\n");
 
    if(LFirst(&list, &data))
@@ -32,7 +41,6 @@ int main(void)
       if(!(data % 2) || !(data % 3))
          LRemove(&list);
    }
-   printf("\n\n");
 
    if(LFirst(&list, &data))
    {
