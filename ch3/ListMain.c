@@ -15,9 +15,9 @@ int main(void)
     LInsert(&list, 22), LInsert(&list, 22);
     LInsert(&list, 33);
 
-    printf("the number of data: %d", LCount(&list));
+    printf("the number of data: %d\n", LCount(&list));
 
-    if(LFirst(&list), &data)
+    if(LFirst(&list, &data))
     {
       printf("%d ", data);
 
