@@ -4,7 +4,19 @@
 #include <time.h>
 #include <math.h>
 #include "Point.h"
-#include "ArrayList2.h"
+#include "DLinkedList.h"
+
+int WhoIsPrecede(LData d1, LData d2)
+{
+  if(d1->x < d2->x)
+    return 0;
+  else if(d1->x > d2->x)
+    return 1;
+  else if(d1->y < d2->y)
+    return 0;
+  else
+    return 1;
+}
 
 int main(void)
 {
@@ -14,6 +26,7 @@ int main(void)
   int i;
 
   ListInit(&list);
+  SetSortRule(&list, WhoIsPrecede);
 
   /*
   ppos = (Point *)malloc(sizeof(Point) * 4);
