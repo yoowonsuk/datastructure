@@ -3,14 +3,14 @@
 
 void StackInit(Stack * pstack)
 {
-  pstack->head = (List *)malloc(sizeof(List));
-  ListInit(pstack->head);
+  pstack->plist = (List *)malloc(sizeof(List));
+  ListInit(pstack->plist);
 // pstack->head == NULL;
 }
 
 int SIsEmpty(Stack * pstack)
 {
-  if(LCount(pstack->head))
+  if(LCount(pstack->plist))
     return FALSE;
   return TRUE;
   /*
@@ -22,7 +22,7 @@ int SIsEmpty(Stack * pstack)
 
 void SPush(Stack * pstack, Data data)
 {
-  LInsertFront(pstack->head, data);
+  LInsertFront(pstack->plist, data);
   /*
   Node * newNode = (Node *)malloc(sizeof(Node));
   newNode -> data = data;
@@ -35,8 +35,8 @@ void SPush(Stack * pstack, Data data)
 Data SPop(Stack * pstack)
 {
   Data rdata;
-  LFirst(pstack->head, &rdata);
-  return LRemove(pstack->head);
+  LFirst(pstack->plist, &rdata);
+  return LRemove(pstack->plist);
 
   /*
   Data rdata = pstack->head->data;
@@ -51,7 +51,7 @@ Data SPop(Stack * pstack)
 Data SPeek(Stack * pstack)
 {
   Data data;
-  LFirst(pstack->head, &data);
+  LFirst(pstack->plist, &data);
   return data;
 //  return pstack->head->data;
 }

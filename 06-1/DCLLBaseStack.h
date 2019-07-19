@@ -8,7 +8,7 @@
 
 typedef struct 
 {
-	List * head;
+	List * plist;
 } DCLListStack;
 
 typedef DCLListStack Stack;
