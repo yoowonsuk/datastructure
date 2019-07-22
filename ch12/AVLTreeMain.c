@@ -29,12 +29,17 @@ int main(void)
 	crNode = GetRightSubTree(crNode);
 	printf("왼쪽2: %d, 오른쪽2: %d \n", GetData(clNode), GetData(crNode));
 
-	clNode = GetLeftSubTree(clNode);
-	crNode = GetRightSubTree(crNode);
-	printf("왼쪽3: %d, 오른쪽3: %d \n", GetData(clNode), GetData(crNode));
+	//clNode = GetLeftSubTree(clNode);
+	crNode = GetLeftSubTree(crNode);
+	//printf("왼쪽3: %d, 오른쪽3: %d \n", GetData(clNode), GetData(crNode));
+  printf("left3: %d\n", GetData(crNode));
 
+  /*
 	clNode = GetLeftSubTree(clNode);
 	crNode = GetRightSubTree(crNode);
 	printf("왼쪽4: %d, 오른쪽4: %d \n", GetData(clNode), GetData(crNode));
+  */
+
+  BSTShowAll(avlRoot);
 	return 0;
 }
